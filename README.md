@@ -1,6 +1,8 @@
 # Samsung Auto Trader — 시스템 설명서 및 운영 가이드
 
-본 문서는 한국투자증권 OpenAPI와 PyTorch 기반의 **Tiny GPT** 예측 모델을 결합한 삼성전자(005930) 주식 자동매매 시스템 `samsung_auto_trader` 프로젝트의 동작 원리, 상세 구성 파일 역할 및 핵심 트레이딩 로직에 대해 기술합니다.
+본 문서는 한국투자증권 OpenAPI와 [TinyGPT](https://github.com/dulee0930/TinyGPT) 모델을 결합한 삼성전자(005930) 주식 자동매매 시스템 `samsung_auto_trader` 프로젝트의 동작 원리, 상세 구성 파일 역할 및 핵심 트레이딩 로직에 대해 기술합니다.
+
+본 자동매매 시스템의 핵심 시그널 생성 엔진은 [TinyGPT 레포지토리](https://github.com/dulee0930/TinyGPT)의 모델 구조를 기반으로 구현 및 연동되었습니다.
 
 ---
 
@@ -123,7 +125,7 @@ flowchart TD
 
 ## 4. Tiny GPT AI 예측 엔진 명세
 
-`tiny_gpt_trading_signal_real_cli.py`는 고차원의 시계열 연속 지표를 이산형 토큰으로 매핑하여 트랜스포머 아키텍처로 흐름을 분석하는 독창적인 구조를 취합니다.
+본 시스템의 예측 모델은 [TinyGPT 레포지토리](https://github.com/dulee0930/TinyGPT)의 GPT-2 스타일 Transformer Decoder 아키텍처를 기반으로 하고 있습니다. `tiny_gpt_trading_signal_real_cli.py`는 고차원의 시계열 연속 지표를 이산형 토큰으로 매핑하여 트랜스포머 아키텍처로 흐름을 분석하는 독창적인 구조를 취합니다.
 
 ### 1) 기술적 지표 추출 및 라벨링
 - 수집된 종가 데이터로 RSI 14일 지표, 5일/20일/60일 이동평균 이격도, 당일 변동폭 ATR Proxy, 20일 이동평균 대비 거래량 비율(`volume_ratio`), 일중 수익률 등을 산출합니다.
