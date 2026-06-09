@@ -1,0 +1,29 @@
+{
+  "symbol": "005930",
+  "source_csv": "C:\\Users\\dulee0930\\Desktop\\2026-1\\인공지능과금융공학\\Final Project\\open-trading-api-main\\open-trading-api-main\\samsung_auto_trader\\Samsung_Daily_Data_yfinance.csv",
+  "as_of_date": "2026-06-01",
+  "latest_close": 349000.0,
+  "latest_market_state_token": "T_S_UP|M5_S_POS|M20_S_POS|RSI_OVERBOUGHT|VOL_HIGH|RNG_V_HIGH",
+  "target_definition": {
+    "horizon_trading_days": 5,
+    "buy_if_future_return_gte": 0.02,
+    "sell_if_future_return_lte": -0.02
+  },
+  "prediction": {
+    "raw_signal": "HOLD",
+    "trading_signal": "HOLD",
+    "confidence": 0.35259971022605896,
+    "prob_sell": 0.32228073477745056,
+    "prob_hold": 0.35259971022605896,
+    "prob_buy": 0.3251195549964905,
+    "normalized_entropy": 0.9992411136627197,
+    "min_confidence": 0.45,
+    "confidence_guard_applied": true,
+    "action_blocked_by_confidence": false
+  },
+  "training_summary": {
+    "best_epoch": 5,
+    "best_validation_balanced_accuracy": 0.362683685157912,
+    "stopped_early": false
+  }
+}
