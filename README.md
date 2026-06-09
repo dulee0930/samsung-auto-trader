@@ -105,10 +105,10 @@ flowchart TD
 #### **매수 (BUY) 규칙**
 - 현금 한도 내에서 1주 이상 구매 가능한 수량을 정수로 산정합니다.
 - 1회 주문할 수 있는 최대 사용 금액 한도는 다음 중 최솟값을 채택합니다:
-  $$\text{max\_order\_cash} = \min(\text{available\_cash} \times 0.10, \, \max(0.0, \, \text{total\_equity} \times 0.30 - \text{holding\_qty} \times \text{current\_price}))$$
+  $$\text{MaxOrderCash} = \min(\text{AvailableCash} \times 0.10, \, \max(0.0, \, \text{TotalEquity} \times 0.30 - \text{HoldingQty} \times \text{CurrentPrice}))$$
   - **예수금 비율 한도**: 보유 중인 사용 가능한 현금(`available_cash`)의 **최대 10%**만 매수에 투입합니다.
   - **비중 유지 한도**: 전체 평가 자산(`total_equity`) 중 해당 종목 비중이 **최대 30%**를 넘지 않도록 제한합니다.
-- 계산된 $\text{max\_order\_cash}$가 현재가보다 낮아 1주조차 구매할 수 없을 때는 매수를 진행하지 않습니다.
+- 계산된 `max_order_cash`가 현재가보다 낮아 1주조차 구매할 수 없을 때는 매수를 진행하지 않습니다.
 - **주문 단가**: 실시간 현재 시장 가격(`current_price`) 그대로 지정하여 지정가(Limit Order)로 발송합니다.
 
 > [!NOTE]
