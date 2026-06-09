@@ -1,0 +1,30 @@
+# ===== Environment / Secrets =====
+.env
+.env.local
+.env.*.local
+*.pem
+
+# ===== KIS Tokens / Cache =====
+token_cache.json
+response_debug.json
+.kis_token*.json
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ===== IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== Logs =====
+*.log
